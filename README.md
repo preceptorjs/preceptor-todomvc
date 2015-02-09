@@ -58,3 +58,8 @@ Chrome has a [known bug](https://code.google.com/p/chromedriver/issues/detail?id
 * Build screenshots are in `tests/ui/regression/build`
 * Visual regression comparisons are in `tests/ui/regression/highlight`
 
+##Example
+
+Screenshot from Firefox:
+![firefox](https://raw.githubusercontent.com/marcelerz/preceptor-todomvc/master/tests/ui/regression/approved/firefox-latest_UI-Todo-Index-Complete-multiple-entries-complete-entries-appearance_1.png)
+
