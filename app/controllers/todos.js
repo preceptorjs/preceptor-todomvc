@@ -15,7 +15,8 @@ export default Ember.ArrayController.extend({
       // Create the new Todo model
       todo = this.store.createRecord('todo', {
         title: title,
-        isCompleted: false
+        isCompleted: false,
+        createdDate: new Date().toTimeString()
       });
       todo.save();
 

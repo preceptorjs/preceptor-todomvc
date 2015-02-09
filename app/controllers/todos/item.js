@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   // We use the bufferedTitle to store the original value of
   // the model's title so that we can roll it back later in the
   // `cancelEditing` action.
-  bufferedTitle: Ember.computed.oneWay('title'),
+  bufferedTitle: Ember.computed.oneWay('model.title'),
 
   actions: {
     editTodo: function () {
@@ -14,7 +14,6 @@ export default Ember.Controller.extend({
     },
 
     doneEditing: function () {
-      debugger;
       var bufferedTitle = this.get('bufferedTitle');
 
       if (Ember.isEmpty(bufferedTitle)) {
@@ -26,6 +25,7 @@ export default Ember.Controller.extend({
         Ember.run.debounce(this, 'removeTodo', 0);
       } else {
         var todo = this.get('model');
+        todo.set('createdDate', new Date().toTimeString());
         todo.set('title', bufferedTitle);
         todo.save();
       }
@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
     },
 
     cancelEditing: function () {
-      this.set('bufferedTitle', this.get('title'));
+      this.set('bufferedTitle', this.get('model.title'));
       this.set('isEditing', false);
     },
 
@@ -53,6 +53,8 @@ export default Ember.Controller.extend({
   },
 
   saveWhenCompleted: function () {
-    this.get('model').save();
-  }.observes('isCompleted')
+    var todo = this.get('model');
+    todo.set('completedDate', todo.get('isCompleted') ? new Date().toTimeString() : null);
+    todo.save();
+  }.observes('model.isCompleted')
 });

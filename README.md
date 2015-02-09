@@ -1,17 +1,31 @@
-# Preceptor-TODOMVC
+# Preceptor-TodoMVC
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a sample project for Preceptor, Hodman, and Kobold, suggesting a way of using all of these in your own project.
+
+This project mostly consists of the TodoMVC application realized in Ember-CLI.
+
+However, the Preceptor tests (with all related tools) can be found in the ```tests/ui``` folder.
 
 ## Prerequisites
 
-You will need the following things properly installed on your computer.
+You will need the following things properly installed on your computer to run this project.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM)
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+
+## Prerequisites installation
+
+For Bower:
+```
+npm install -g bower
+```
+
+For Ember-CLI:
+```
+npm install -g ember-cli
+```
 
 ## Installation
 
@@ -20,34 +34,27 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
-## Running / Development
+## Running the application
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit the app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## Execute the Preceptor tests
 
-Make use of the many generators for code, try `ember help generate` for more details
+* `npm test`
+This will run the tests in PhantomJS on your local machine. Make sure that the Ember server is running in the background.
 
-### Running Tests
+Additionally, you can also run the tests in other browsers on your local machine:
+* `npm run firefox` - You need Firefox installed on your system
+* `npm run chrome` - You need Chrome installed on your system
+* `npm run phantomsjs` - Same as `npm test` 
 
-* `ember test`
-* `ember test --server`
+Note: 
+Chrome has a [known bug](https://code.google.com/p/chromedriver/issues/detail?id=294) for having trouble capturing screenshots.
 
-### Building
+## Results
 
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* A JUnit XML file is created in `tests/ui/test-results.xml`
+* Build screenshots are in `tests/ui/regression/build`
+* Visual regression comparisons are in `tests/ui/regression/highlight`
 

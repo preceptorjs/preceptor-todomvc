@@ -5,11 +5,16 @@
       {{/if}}
         <ul id="todo-list">
           {{#each todo in controller.model itemController="todos/item"}}
-              <li {{bind-attr class="todo.model.isCompleted:completed todo.isEditing:editing"}}>
+              <li {{bind-attr class="todo.model.isCompleted:completed todo.isEditing:editing :row"}}>
                 {{#if todo.isEditing}}
                   {{todo-input type="text" class="edit" value=todo.bufferedTitle focus-out="doneEditing" insert-newline="doneEditing" escape-press="cancelEditing" target="todo"}}
                 {{else}}
                   {{input type="checkbox" class="toggle" checked=todo.model.isCompleted}}
+
+                    <span class="row">
+                      Created: <span class="created-label time-label">{{todo.model.createdDate}}</span>
+                      {{#if todo.model.completedDate}}, Completed: <span class="completed-label time-label">{{todo.model.completedDate}}</span>{{/if}}
+                    </span>
                     <label {{action "editTodo" on="doubleClick" target="todo"}}>{{todo.model.title}}</label>
                     <button {{action "removeTodo" target="todo"}} class="destroy"></button>
                 {{/if}}

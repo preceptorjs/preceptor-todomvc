@@ -1,0 +1,13 @@
+ul li span.row {
+  margin-left: 45px;
+  padding: 15px;
+  font-size: 10px;
+  width: 100%;
+  font-weight: bold;
+}
+ul li span.time-label {
+  font-weight: normal;
+}
+ul#todo-list li label {
+  padding-top: 0;
+}
