@@ -1,5 +1,8 @@
 # Preceptor-TodoMVC
 
+**[Still work in progress!]**
+
+
 This is a sample project for Preceptor, Hodman, and Kobold, suggesting a way of using all of these in your own project.
 
 This project mostly consists of the TodoMVC application realized in Ember-CLI.
