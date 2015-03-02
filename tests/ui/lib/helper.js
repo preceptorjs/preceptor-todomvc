@@ -51,7 +51,7 @@ function setupPageObjects () {
   var hodman = require('hodman'), BaseObject = hodman.BaseObject, PageObject = hodman.PageObject;
 
   // Setup base-url to avoid having to hard-code these in the tests
-  PageObject.BASE = config.webBaseUrl;
+  PageObject.BASE = config.webBaseUrl || "http://localhost";
 
   // The Preceptor-WebDriver plugin creates another global namespace called
   // "PRECEPTOR_WEBDRIVER". This will give all the testing frameworks access
@@ -59,10 +59,10 @@ function setupPageObjects () {
 
   // Setup Cabbie
   BaseObject.DRIVER_ADAPTER = new hodman.driverAdapters.Cabbie(global.PRECEPTOR_WEBDRIVER.driver);
-  BaseObject.DRIVER_ADAPTER.getDriver().timeOut().setImplicitTimeOut(config.implicitTimeOut);
+  BaseObject.DRIVER_ADAPTER.getDriver().timeOut().setImplicitTimeOut(config.implicitTimeOut || 1000);
 
   // Setup the screenshot-path
-  BaseObject.SCREENSHOT_PATH = path.resolve(path.join(__dirname, '..', 'regression', 'build'));
+  BaseObject.SCREENSHOT_PATH = config.screenshotPath || path.resolve(path.join(__dirname, '..', 'regression', 'build'));
 
   // Add prefix for screenshots
   global.SCREENSHOT_PREFIX = global.PRECEPTOR_WEBDRIVER.browser;
