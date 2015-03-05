@@ -59,7 +59,7 @@
     "ember-localstorage-adapter": "^0.5.0",
     "express": "^4.8.5",
     "glob": "^4.0.5",
-    "hodman": "0.9.6",
+    "hodman": "0.9.5",
     "kobold": "0.9.3",
     "mocha": "1.21.4",
     "phantomjs": "^1.9.15",
