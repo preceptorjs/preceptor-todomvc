@@ -2,6 +2,7 @@
 
 **[Still work in progress!]**
 
+[![Gitter Support](https://img.shields.io/badge/Support-Gitter_IM-yellow.svg)](https://gitter.im/preceptorjs/support)
 
 This is a sample project for Preceptor, Hodman, and Kobold, suggesting a way of using all of these in your own project.
 
