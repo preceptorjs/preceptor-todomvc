@@ -17,11 +17,11 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "homepage": "https://github.com/marcelerz/preceptor-todomvc",
-  "bugs": "https://github.com/marcelerz/preceptor-todomvc/issues",
+  "homepage": "https://github.com/preceptorjs/preceptor-todomvc",
+  "bugs": "https://github.com/preceptorjs/preceptor-todomvc/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcelerz/preceptor-todomvc.git"
+    "url": "https://github.com/preceptorjs/preceptor-todomvc.git"
   },
   "keywords": [
     "testing",
