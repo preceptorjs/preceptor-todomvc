@@ -176,6 +176,7 @@ var TodoEntryView = ViewObject.extend(
      */
     delete: function () {
       assert.ok(!this.isInEditMode(), "Item is in edit-mode.");
+      this.getContext().mouse().moveToCenter();
       this.getElement("delete").mouse().click();
     },
 

@@ -130,6 +130,9 @@ module.exports = {
       "configuration": {
         "highlightOnSuccess": true,
 
+        "failForOrphans": false,
+        "failOnAdditions": false,
+
         "storage": {
           "options": {
             "path": __dirname + "/regression"

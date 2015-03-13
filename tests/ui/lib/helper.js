@@ -118,6 +118,12 @@ function setupApplication () {
     loadPageObject('application').navigate();
   };
 
+  application.getAdapter().getDriver().browser().activeWindow().execute(function () {
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+  });
+  application.reset();
+
   return application;
 }
 

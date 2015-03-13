@@ -40,7 +40,7 @@ describe('Todo', function () {
 
         this.page = this.application.getPage();
         var count = this.page.getListView().count();
-        assert.equal(count, 1, "Doesn't have the correct amount of items in the list.");
+        assert.equal(count, 1, "Doesn't have the correct amount of items in the list." + count);
       });
 
       it('single entry appearance', function (done) {
@@ -61,7 +61,7 @@ describe('Todo', function () {
 
       it('should have one item left', function () {
         var itemsLeft = this.application.getFooter().getItemsLeft();
-        assert.equal(itemsLeft, 1, "Doesn't have the correct number of items left.");
+        assert.equal(itemsLeft, 1, "Doesn't have the correct number of items left." + itemsLeft);
       });
 
       it('should not be in edit-mode', function () {
@@ -126,7 +126,7 @@ describe('Todo', function () {
 
       it('should have no item left', function () {
         var itemsLeft = this.application.getFooter().getItemsLeft();
-        assert.equal(itemsLeft, 0, "Doesn't have the correct number of items left.");
+        assert.equal(itemsLeft, 0, "Doesn't have the correct number of items left." + itemsLeft);
       });
 
       it('should have a completed label', function () {
@@ -148,7 +148,7 @@ describe('Todo', function () {
 
       it('should have one item left', function () {
         var itemsLeft = this.application.getFooter().getItemsLeft();
-        assert.equal(itemsLeft, 1, "Doesn't have the correct number of items left.");
+        assert.equal(itemsLeft, 1, "Doesn't have the correct number of items left." + itemsLeft);
       });
 
       it('should not have a completed label', function () {
@@ -204,7 +204,7 @@ describe('Todo', function () {
 
         this.page = this.application.getPage();
         var count = this.page.getListView().count();
-        assert.equal(count, 6, "Doesn't have the correct amount of items in the list.");
+        assert.equal(count, 6, "Doesn't have the correct amount of items in the list." + count);
       });
 
       it('should have a footer', function () {
@@ -221,7 +221,7 @@ describe('Todo', function () {
 
       it('should have one item left', function () {
         var itemsLeft = this.application.getFooter().getItemsLeft();
-        assert.equal(itemsLeft, 6, "Doesn't have the correct number of items left.");
+        assert.equal(itemsLeft, 6, "Doesn't have the correct number of items left." + itemsLeft);
       });
 
       it('should not be in edit-mode', function () {
